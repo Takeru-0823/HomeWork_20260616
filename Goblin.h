@@ -2,10 +2,12 @@
 
 #include "Character.h"
 
-class Gonblin : public Character
+class Goblin : public Character
 {
 public:
-	Gonblin(char* n, int h, int a);
-	~Gonblin();
+	Goblin(char* n, int h, int a);
+	Goblin(const Goblin& other);
+	~Goblin();
+	void operator=(const Goblin& other);
 	void Attack(Character& target);
 };

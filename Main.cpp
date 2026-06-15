@@ -6,25 +6,6 @@
 using namespace std;
 
 const int NAME_MAX = 16;
-const int CHARACTER_MAX = 2;
-
-enum
-{
-	HERO,
-	GOBLIN
-};
-
-void ShowHP(const Character& character)
-{
-	cout << "HP " << character.GetHP() << endl;
-}
-
-void AttackTurn(Character& attacker, Character& target)
-{
-	attacker.Attack(target);
-	cout << "相手の";
-	ShowHP(target);
-}
 
 int main()
 {
@@ -35,25 +16,21 @@ int main()
 
 	bool p_win = false;
 	Hero hero(h_name, 100, 20);
-	Gonblin goblin(g_name, 130, 20);
-
-	Character* character[CHARACTER_MAX];
-	character[HERO] = new Hero(h_name, 100, 20);
-	character[GOBLIN] = new Gonblin(g_name, 130, 20);
+	Goblin goblin(g_name, 130, 20);
 
 	while (true)
 	{
-		character[HERO]->AttackTurn(*character[HERO], *character[GOBLIN]);
+		hero.AttackTurn(hero, goblin);
 
-		if (character[GOBLIN]->GetHP() <= 0)
+		if (goblin.GetHP() <= 0)
 		{
 			p_win = true;
 			break;
 		}
 
-		character[GOBLIN]->AttackTurn(*character[GOBLIN], *character[HERO]);
+		goblin.AttackTurn(goblin, hero);
 
-		if (character[HERO]->GetHP() <= 0)
+		if (hero.GetHP() <= 0)
 		{
 			break;
 		}
