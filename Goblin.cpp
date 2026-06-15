@@ -5,8 +5,17 @@ using namespace std;
 
 Gonblin::Gonblin(char* n, int h, int a)
 {
-	name = new char[strlen(n) + 1];
-	strcpy(name, n);
+	if (n != nullptr)
+	{
+		name = new char[strlen(n) + 1];
+		strcpy(name, n);
+	}
+	else
+	{
+		const char* DEFAULT_NAME = "No Name";
+		name = new char[strlen(DEFAULT_NAME) + 1];
+		strcpy(name, DEFAULT_NAME);
+	}
 
 	if (h < 0) hp = 0;
 	else hp = h;
