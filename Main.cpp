@@ -20,7 +20,7 @@ int main()
 
 	while (true)
 	{
-		hero.AttackTurn(hero, goblin);
+		hero.AttackTurn(goblin);
 
 		if (goblin.GetHP() <= 0)
 		{
@@ -28,7 +28,7 @@ int main()
 			break;
 		}
 
-		goblin.AttackTurn(goblin, hero);
+		goblin.AttackTurn(hero);
 
 		if (hero.GetHP() <= 0)
 		{

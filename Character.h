@@ -11,5 +11,5 @@ public:
 	int GetHP() const;
 	void TakeDamage(int damage);
 	virtual void Attack(Character& character);
-	void AttackTurn(Character& attacker, Character& target);
+	void AttackTurn(Character& target);
 };

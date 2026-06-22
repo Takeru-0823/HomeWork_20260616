@@ -16,13 +16,13 @@ void Character::TakeDamage(int damage)
 
 void Character::Attack(Character& character)
 {
-
+	cout << "attack" << endl;
 }
 
-void Character::AttackTurn(Character& attacker, Character& target)
+void Character::AttackTurn(Character& target)
 {
-	cout << attacker.name << "のターン" << endl;
-	attacker.Attack(target);
+	cout << name << "のターン" << endl;
+	Attack(target);
 	cout << target.name << "のHP" << target.GetHP() << endl;
 	cout << endl;
 }
