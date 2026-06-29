@@ -10,6 +10,6 @@ protected:
 public:
 	int GetHP() const;
 	void TakeDamage(int damage);
-	virtual void Attack(Character& character);
+	virtual void Attack(Character& character) = 0;
 	void AttackTurn(Character& target);
 };

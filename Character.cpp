@@ -14,11 +14,6 @@ void Character::TakeDamage(int damage)
 	if (hp < 0) hp = 0;
 }
 
-void Character::Attack(Character& character)
-{
-	cout << "attack" << endl;
-}
-
 void Character::AttackTurn(Character& target)
 {
 	cout << name << "‚Ìƒ^[ƒ“" << endl;
